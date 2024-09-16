@@ -1,8 +1,8 @@
 <template>
-  <div class="layout">
+  <div class="layout position-relative">
     <v-layout>
       <CardDrawer />
-      <v-main>
+      <v-main style="padding-top: 64px">
         <slot></slot>
       </v-main>
       <AppNav />
@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import AppNav from "../AppNav.vue";
-import CardDrawer from "../CardDrawer.vue";
-import AppFooter from "../AppFooter.vue";
+import AppNav from "./AppNav.vue";
+import CardDrawer from "./CardDrawer.vue";
+import AppFooter from "./AppFooter.vue";
 export default {
   components: {
     AppNav,
