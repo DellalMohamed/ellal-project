@@ -2,7 +2,7 @@
   <div class="products-swiper py-16 px-3">
     <div class="title mb-10 px-5 d-flex align-center justify-space-between">
       <h2 class="text-red" style="font-weight: 900; font-size: 30px">
-        Flash Deals
+        {{ categoryTitle }}
       </h2>
       <a href="#" class="text-black" style="font-size: 14px">Shop All</a>
     </div>
@@ -18,7 +18,10 @@
       <swiper-slide v-for="item in products" :key="item.id">
         <v-card elevation="0">
           <v-hover v-slot="{ isHovering, props }">
-            <div class="img-parent" style="height: 200px; overflow: hidden">
+            <div
+              class="img-parent position-relative"
+              style="height: 200px; overflow: hidden"
+            >
               <img
                 :src="item.thumbnail"
                 class="w-100"
@@ -28,6 +31,24 @@
                 alt=""
                 v-bind="props"
               />
+              <v-btn
+                density="compact"
+                width="60"
+                height="30"
+                variant="outlined"
+                class="bg-white quick-view-btn"
+                style="
+                  text-transform: none;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  font-size: 12px;
+                  border-radius: 40px;
+                  opacity: 0;
+                "
+                >Quick View</v-btn
+              >
             </div>
           </v-hover>
           <v-card-text class="pl-0 pb-1">
@@ -46,7 +67,7 @@
             readonly
             color="yellow-darken-2"
             size="x-small"
-            density="cobact"
+            density="compact"
           ></v-rating>
           <v-card-text class="pl-0 pt-0">
             <del>${{ item.price }}</del> from
@@ -60,6 +81,12 @@
           </v-card-text>
           <btn-toggle v-model="showenItem"> </btn-toggle>
           <v-btn
+            @click="
+              $router.push({
+                name: 'product_details',
+                params: { productId: item.id },
+              })
+            "
             class="py-3 px-10"
             style="text-transform: none; border-radius: 30px"
             >Choose Option</v-btn
@@ -70,11 +97,6 @@
       <div class="swiper-next"></div>
       <div class="swiper-pagination"></div>
     </swiper>
-    <!--<v-container fluid>
-      <v-row>
-        <v-col cols="3" v-for="item in products" :key="item.id"> </v-col>
-      </v-row>
-    </v-container>-->
   </div>
 </template>
 
@@ -85,6 +107,9 @@ export default {
   props: {
     products: {
       type: Array,
+    },
+    categoryTitle: {
+      type: String,
     },
   },
   components: { Swiper, SwiperSlide },
@@ -125,6 +150,11 @@ export default {
   .swiper-pagination-bullet {
     width: 8px;
     height: 8px;
+  }
+  .img-parent:hover {
+    .quick-view-btn {
+      opacity: 1 !important;
+    }
   }
 }
 </style>

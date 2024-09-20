@@ -1,6 +1,9 @@
 <template>
-  <h1>jjhj</h1>
-  <div class="new-products">
+  <div class="new-products pt-12">
+    <div class="title mb-10 px-5 d-flex align-center justify-space-between">
+      <h2 style="font-weight: 900; font-size: 30px">Flash Deals</h2>
+      <a href="#" class="text-black" style="font-size: 14px">Shop All</a>
+    </div>
     <v-container fluid>
       <v-row>
         <v-col cols="7">
@@ -9,7 +12,6 @@
             :pagination="pagination"
             :slides-per-view="3"
             :space-between="20"
-            :autoplay="{ delay: 2200 }"
             class="pb-9"
           >
             <swiper-slide v-for="item in products" :key="item.id">
@@ -33,7 +35,8 @@
                 <v-card-text class="pl-0 pb-1">
                   ({{ item.title }}) <br />
                   {{
-                    item.description + " " + item.title &&
+                    item.description &&
+                    item.title &&
                     item.description.split(" ").length <= 8
                       ? item.description
                       : item.description
@@ -65,6 +68,12 @@
                   </span>
                 </v-card-text>
                 <v-btn
+                  @click="
+                    $router.push({
+                      name: 'product_details',
+                      params: { productId: item.id },
+                    })
+                  "
                   class="py-3 px-10"
                   style="text-transform: none; border-radius: 30px"
                   >Choose Option</v-btn
@@ -77,7 +86,7 @@
           </swiper>
         </v-col>
         <v-col cols="5">
-          <img src="image.jpg" alt="" />
+          <img src="../../assets/images/vr-banner.webp" alt="" />
         </v-col>
       </v-row>
     </v-container>
@@ -86,7 +95,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination } from "swiper";
 export default {
   props: {
     products: {
@@ -103,7 +112,7 @@ export default {
   }),
   setup() {
     return {
-      modules: [Pagination, Autoplay],
+      modules: [Pagination],
     };
   },
 };

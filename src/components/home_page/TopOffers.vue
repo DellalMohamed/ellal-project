@@ -4,9 +4,13 @@
       <v-row>
         <v-col cols="4">
           <v-hover v-slot="{ isHovering, props }">
-            <div class="parent pr-4" style="overflow: hidden" v-bind="props">
+            <div
+              class="parent"
+              style="overflow: hidden; height: 172px"
+              v-bind="props"
+            >
               <img
-                src="@/assets/logo.png"
+                src="../../assets/images/playstations.webp"
                 :style="`width: 100%;cursor: pointer; transition: 0.5s all ease-in-out; scale: ${
                   isHovering ? 1.1 : 1
                 }`"
@@ -17,9 +21,13 @@
         </v-col>
         <v-col cols="4">
           <v-hover v-slot="{ isHovering, props }">
-            <div class="parent pr-2" style="overflow: hidden" v-bind="props">
+            <div
+              class="parent"
+              style="overflow: hidden; height: 172px"
+              v-bind="props"
+            >
               <img
-                src="@/assets/logo.png"
+                src="../../assets/images/headset.webp"
                 :style="`width: 100%; cursor: pointer; transition: 0.5s all ease-in-out; transform: scale(${
                   isHovering ? 1.1 : 1
                 });`"
@@ -30,9 +38,13 @@
         </v-col>
         <v-col cols="4">
           <v-hover v-slot="{ isHovering, props }">
-            <div class="parent pl-2" style="overflow: hidden" v-bind="props">
+            <div
+              class="parent"
+              style="overflow: hidden; height: 172px"
+              v-bind="props"
+            >
               <img
-                src="@/assets/logo.png"
+                src="../../assets/images/chairs.webp"
                 :style="`width: 100%;cursor: pointer; transition: 0.5s all ease-in-out; scale: ${
                   isHovering ? 1.1 : 1
                 }`"
@@ -43,9 +55,13 @@
         </v-col>
         <v-col cols="6" class="mt-2">
           <v-hover v-slot="{ isHovering, props }">
-            <div class="parent pr-2" style="overflow: hidden" v-bind="props">
+            <div
+              class="parent bg-green"
+              style="overflow: hidden; height: 287px"
+              v-bind="props"
+            >
               <img
-                src="@/assets/logo.png"
+                src="../../assets/images/iphones.webp"
                 :style="`width: 100%;cursor: pointer; transition: 0.5s all ease-in-out; scale: ${
                   isHovering ? 1.1 : 1
                 }`"
@@ -56,10 +72,14 @@
         </v-col>
         <v-col cols="6" class="mt-2">
           <v-hover v-slot="{ isHovering, props }">
-            <div class="parent pl-2" style="overflow: hidden" v-bind="props">
+            <div
+              class="parent"
+              style="overflow: hidden; height: 287px"
+              v-bind="props"
+            >
               <img
-                src="@/assets/logo.png"
-                :style="`width: 100%;cursor: pointer; transition: 0.5s all ease-in-out; scale: ${
+                src="../../assets/images/laptops.webp"
+                :style="`width: 100%; cursor: pointer; transition: 0.5s all ease-in-out; scale: ${
                   isHovering ? 1.1 : 1
                 }`"
                 alt=""

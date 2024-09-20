@@ -1,7 +1,7 @@
 <template>
   <div class="top_cat">
-    <div class="cyber_banner w-100 bg-blue">
-      <img src="" alt="" />
+    <div class="cyber_banner w-100">
+      <img src="../../assets/images/cyber-banner.webp" alt="" />
     </div>
     <div class="categories pt-13">
       <div class="title d-flex justify-center align-center mb-3">

@@ -2,7 +2,7 @@
   <div class="layout position-relative">
     <v-layout>
       <CardDrawer />
-      <v-main style="padding-top: 64px">
+      <v-main style="padding-top: 128px">
         <slot></slot>
       </v-main>
       <AppNav />
